@@ -11,15 +11,15 @@ namespace CSharpBuoi3_Phuc
             Console.WriteLine("Xin chào thầy!");
             Console.WriteLine("Em là Phúc, năm 2 CNTT.\n");
 
-            // Gọi các hàm
-            InThongTinCaNhan();
-            TaoNhanVatCoAtk();
+            InThongTinCaNhan();           // Gọi hàm thông tin cá nhân
+            TaoNhanVatCoAtk();            // Gọi hàm nhân vật mới
 
             Console.WriteLine("\nNhấn phím bất kỳ để thoát...");
             Console.ReadKey();
         }
 
         // Hàm in thông tin cá nhân
+        // Hàm thực hiện in ra thông tin có sẵn
         static void InThongTinCaNhan()
         {
             string hoVaTen = "Đoàn Văn Phúc";
@@ -34,8 +34,10 @@ namespace CSharpBuoi3_Phuc
             Console.WriteLine($"Trường: {truongHoc}\n");
         }
 
-        // Hàm quản lý nhân vật (có nhập liệu)
-        static void InThongTinNhanVat()
+        // Hàm mới - Tạo nhân vật có Atk (theo đúng tên thầy yêu cầu)
+        // Hàm thực hiện nhập tên, HP, speed, Atk nhân vật từ người chơi
+        // Hàm thực hiện in ra thông tin nhân vật mà người chơi nhập
+        static void TaoNhanVatCoAtk()
         {
             Console.Write("Nhập tên nhân vật của bạn: ");
             string tenNV = Console.ReadLine();
@@ -46,16 +48,13 @@ namespace CSharpBuoi3_Phuc
             Console.Write("Nhập tốc độ: ");
             float speed = float.Parse(Console.ReadLine());
 
+            Console.Write("Nhập ATK: ");
+            int atk = int.Parse(Console.ReadLine());
+
             Console.WriteLine("\n=== NHÂN VẬT ĐÃ ĐƯỢC TẠO ===");
             Console.WriteLine($"Tên nhân vật: {tenNV}");
             Console.WriteLine($"HP: {hp}");
             Console.WriteLine($"Speed: {speed}");
-        }
-        static void TaoNhanVatCoAtk()
-        {
-            Console.Write("Nhập chỉ số tấn công cho nhân vật của bạn: ");
-            int atk = int.Parse(Console.ReadLine());
-            InThongTinNhanVat();
             Console.WriteLine($"Atk: {atk}");
         }
     }
